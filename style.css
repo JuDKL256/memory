@@ -1,50 +1,52 @@
 .carte {
     height: 200px;
-    aspect-ratio: 0.71428571; 
-    perspective: 1000px;      
+    aspect-ratio: 0.71428571;
+    perspective: 1000px;
     margin: 1%;
-    border-radius: 7.5px;      
-    overflow: hidden;         
+    border-radius: 7.5px;
+    overflow: hidden;
+    position: relative; /* Ajouté pour s'assurer que les enfants sont positionnés correctement */
 }
 
 .carteInner {
-    width: 100%;              
-    height: 100%;             
+    width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.6s;  
+    transition: transform 0.6s;
+    position: relative; /* Ajouté pour s'assurer que les enfants sont positionnés correctement */
 }
 
 .carteFront, .carteBack {
-    position: absolute;        
-    width: 100%;               
-    height: 100%;              
+    position: absolute;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
 }
 
 .carteFront {
-    background: lightblue;     
+    background: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .carteBack {
-    background: lightcoral;    
+    background: lightcoral;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotateX(180deg); 
+    transform: rotateX(180deg);
 }
 
 .carte.flipped .carteInner {
-    transform: rotateX(180deg); 
+    transform: rotateX(180deg);
 }
 
 .carteFront img, .carteBack img {
-    width: 100%;                
-    height: 100%;               
-    aspect-ratio: 0.71428571;   
-    object-fit: cover;        
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 0.71428571;
+    object-fit: cover;
 }
 
 .ligne {
